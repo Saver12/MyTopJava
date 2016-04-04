@@ -32,7 +32,7 @@ public class DataJpaUserRepositoryImpl implements UserRepository {
 
     @Override
     public User get(int id) {
-        return proxy.findOne(id);
+        return proxy.get(id);
     }
 
     @Override
