@@ -57,6 +57,7 @@ public class User extends NamedEntity {
     protected int caloriesPerDay = UserMealsUtil.DEFAULT_CALORIES_PER_DAY;
 
     @OneToMany(fetch=FetchType.LAZY, mappedBy="user")
+    @OrderBy("dateTime DESC")
     private List<UserMeal> meals;
 
     public User() {

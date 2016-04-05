@@ -7,7 +7,6 @@ import ru.javawebinar.topjava.model.User;
 import ru.javawebinar.topjava.model.UserMeal;
 import ru.javawebinar.topjava.service.UserServiceTest;
 
-import java.util.Arrays;
 import java.util.List;
 
 import static ru.javawebinar.topjava.UserTestData.USER_ID;
@@ -20,6 +19,6 @@ public class DataJpaUserServiceTest extends UserServiceTest {
     public void testGetWithMeals() throws Exception {
         User user = service.get(USER_ID);
         List<UserMeal> meals = user.getMeals();
-        MATCHER.assertCollectionEquals(Arrays.asList(MEAL1, MEAL2, MEAL3, MEAL4, MEAL5, MEAL6), meals);
+        MATCHER.assertCollectionEquals(USER_MEALS, meals);
     }
 }
